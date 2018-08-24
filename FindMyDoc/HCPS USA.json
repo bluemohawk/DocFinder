@@ -1,0 +1,194 @@
+ [
+  {
+  "id": "abc123",
+  "Gender": "F",
+  "First Name": "Isabelle",
+  "Last Name": "Huff",
+  "Street": "9699 Gulf Street ",
+  "City": "Cupertino"
+  },
+  {
+  "id": "abc123",
+  "Gender": "F",
+  "First Name": "Phoenix",
+  "Last Name": "Parsons",
+  "Street": "9510 Cypress Court ",
+  "City": "Folsom"
+  },
+  {
+  "id": "abc123",
+  "Gender": "F",
+  "First Name": "Aniyah",
+  "Last Name": "Mcdaniel",
+  "Street": "8923 Wintergreen Ave. ",
+  "City": "Oxnard"
+  },
+  {
+  "id": "abc123",
+  "Gender": "F",
+  "First Name": "Autumn",
+  "Last Name": "Briggs",
+  "Street": "836 Broad Street ",
+  "City": "Bakersfield"
+  },
+  {
+  "id": "abc123",
+  "Gender": "F",
+  "First Name": "Summer",
+  "Last Name": "Choi",
+  "Street": "830 Chapel St. ",
+  "City": "Watsonville"
+  },
+  {
+  "id": "abc123",
+  "Gender": "F",
+  "First Name": "Aimee",
+  "Last Name": "Cantu",
+  "Street": "83 Bank Street ",
+  "City": "Napa"
+  },
+  {
+  "id": "abc123",
+  "Gender": "F",
+  "First Name": "Jazmin",
+  "Last Name": "Deleon",
+  "Street": "8136 Adams Street ",
+  "City": "Tracy"
+  },
+  {
+  "id": "abc123",
+  "Gender": "F",
+  "First Name": "Macie",
+  "Last Name": "Ashley",
+  "Street": "7929 Wood Street ",
+  "City": "El Cajon"
+  },
+  {
+  "id": "abc123",
+  "Gender": "F",
+  "First Name": "Evangeline",
+  "Last Name": "Wilkinson",
+  "Street": "7327 Elmwood St. ",
+  "City": "San Pablo"
+  },
+  {
+  "id": "abc123",
+  "Gender": "F",
+  "First Name": "Bridget",
+  "Last Name": "Becker",
+  "Street": "716 Mountainview Rd. ",
+  "City": "Fremont"
+  },
+  {
+  "id": "abc123",
+  "Gender": "F",
+  "First Name": "Leilani",
+  "Last Name": "Costa",
+  "Street": "7039 Galvin St. ",
+  "City": "San Jose"
+  },
+  {
+  "id": "abc123",
+  "Gender": "F",
+  "First Name": "Eliana",
+  "Last Name": "Raymond",
+  "Street": "6 Mulberry Rd. ",
+  "City": "Chino"
+  },
+  {
+  "id": "abc123",
+  "Gender": "M",
+  "First Name": "Terrence",
+  "Last Name": "Ferguson",
+  "Street": "51 Green Dr. ",
+  "City": "Antioch"
+  },
+  {
+  "id": "abc123",
+  "Gender": "M",
+  "First Name": "Matthew",
+  "Last Name": "Zavala",
+  "Street": "495 Pineknoll Ave. ",
+  "City": "Union City"
+  },
+  {
+  "id": "abc123",
+  "Gender": "M",
+  "First Name": "Yadiel",
+  "Last Name": "Tyler",
+  "Street": "436 Pumpkin Hill Lane ",
+  "City": "Fresno"
+  },
+  {
+  "id": "abc123",
+  "Gender": "M",
+  "First Name": "Jude",
+  "Last Name": "Cooke",
+  "Street": "341 W. Circle St. ",
+  "City": "San Francisco"
+  },
+  {
+  "id": "abc123",
+  "Gender": "M",
+  "First Name": "Korbin",
+  "Last Name": "Hansen",
+  "Street": "326 Somerset St. ",
+  "City": "Bellflower"
+  },
+  {
+  "id": "abc123",
+  "Gender": "M",
+  "First Name": "Keon",
+  "Last Name": "Reed",
+  "Street": "314 Third Dr. ",
+  "City": "Los Angeles"
+  },
+  {
+  "id": "abc123",
+  "Gender": "M",
+  "First Name": "Zackery",
+  "Last Name": "Stafford",
+  "Street": "314 Newcastle St. ",
+  "City": "Chino Hills"
+  },
+  {
+  "id": "abc123",
+  "Gender": "M",
+  "First Name": "Ricky",
+  "Last Name": "Galloway",
+  "Street": "286 Glen Ridge Street ",
+  "City": "Lancaster"
+  },
+  {
+  "id": "abc123",
+  "Gender": "M",
+  "First Name": "Carlos",
+  "Last Name": "Sims",
+  "Street": "24 Armstrong St. ",
+  "City": "Los Angeles"
+  },
+  {
+  "id": "abc123",
+  "Gender": "M",
+  "First Name": "Jordan",
+  "Last Name": "Barron",
+  "Street": "202 Hill St. ",
+  "City": "Los Angeles"
+  },
+  {
+  "id": "abc123",
+  "Gender": "M",
+  "First Name": "Adonis",
+  "Last Name": "Mendez",
+  "Street": "17 Purple Finch Street ",
+  "City": "Livermore"
+  },
+  {
+  "id": "abc123",
+  "Gender": "M",
+  "First Name": "Jadyn",
+  "Last Name": "Winters",
+  "Street": "148 East Ann St. ",
+  "City": "Daly City"
+  }
+  ]
