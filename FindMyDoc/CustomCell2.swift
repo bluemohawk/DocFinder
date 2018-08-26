@@ -28,12 +28,6 @@ class CustomCell2: UITableViewCell {
         availability.layer.masksToBounds = true
         availability.titleLabel?.adjustsFontSizeToFitWidth = true
         availability.titleLabel?.textAlignment = .center
-        
-        
-//        availability.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-//        availability.tintColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
-        
-        
 
     }
 
