@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -198,7 +199,7 @@
                                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="callNumber:" destination="9ID-RN-RiH" eventType="touchUpInside" id="pgP-Kq-CJC"/>
+                                                    <action selector="makeAppointment:" destination="9ID-RN-RiH" eventType="touchUpInside" id="tsh-PV-5ia"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -248,7 +249,7 @@
         <!--Appointment View Controller-->
         <scene sceneID="doN-Xz-cAP">
             <objects>
-                <viewController id="04z-aG-Lt2" customClass="AppointmentViewController" customModule="FindMyDoc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DoctorAppointmentCard" id="04z-aG-Lt2" customClass="AppointmentViewController" customModule="FindMyDoc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zWT-RG-huZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -259,15 +260,75 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KcC-vw-5j7">
+                                <rect key="frame" x="40" y="165" width="240" height="362"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k2G-6m-T5R">
+                                    <size key="itemSize" width="240" height="49"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="lyT-1E-Kqi">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lundi 27 Aout" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQp-wv-jBU">
+                                                    <rect key="frame" x="68" y="24" width="104" height="20"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="sr7-ck-FDT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8:30am" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJ4-JB-ig0">
+                                                    <rect key="frame" x="69" y="45" width="105" height="0.0"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <size key="customSize" width="240" height="49"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="04z-aG-Lt2" id="10W-iG-J1x"/>
+                                    <outlet property="delegate" destination="04z-aG-Lt2" id="JXh-p4-zEc"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4c-9H-Yzh">
+                                <rect key="frame" x="143" y="518" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="returningtoDocDetail:" destination="04z-aG-Lt2" eventType="touchUpInside" id="uG9-SO-atc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="cLW-EE-e2a" secondAttribute="trailing" constant="8" id="3gi-kw-zUa"/>
                             <constraint firstItem="cLW-EE-e2a" firstAttribute="top" secondItem="XzU-12-BT8" secondAttribute="top" constant="15" id="EtK-fh-kxY"/>
+                            <constraint firstItem="KcC-vw-5j7" firstAttribute="leading" secondItem="XzU-12-BT8" secondAttribute="leading" constant="40" id="HNQ-vR-Nxc"/>
+                            <constraint firstItem="XzU-12-BT8" firstAttribute="trailing" secondItem="KcC-vw-5j7" secondAttribute="trailing" constant="40" id="M6o-CB-MnB"/>
+                            <constraint firstItem="XzU-12-BT8" firstAttribute="bottom" secondItem="KcC-vw-5j7" secondAttribute="bottom" constant="41" id="VK0-iB-Lm3"/>
+                            <constraint firstItem="KcC-vw-5j7" firstAttribute="top" secondItem="cLW-EE-e2a" secondAttribute="bottom" constant="77" id="raN-zV-Tk9"/>
                             <constraint firstItem="cLW-EE-e2a" firstAttribute="leading" secondItem="XzU-12-BT8" secondAttribute="leading" constant="8" id="ulh-tM-BBc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XzU-12-BT8"/>
                     </view>
+                    <connections>
+                        <outlet property="appointmentCollection" destination="KcC-vw-5j7" id="2vi-1t-uue"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GuM-bh-OKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,7 +392,7 @@
     </scenes>
     <resources>
         <image name="doc2" width="535" height="542"/>
-        <image name="logo2" width="161.75999450683594" height="163.67999267578125"/>
+        <image name="logo2" width="168" height="170"/>
         <image name="second" width="30" height="30"/>
         <namedColor name="Eggplant">
             <color red="0.28627450980392155" green="0.15294117647058825" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

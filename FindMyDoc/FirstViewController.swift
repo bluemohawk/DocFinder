@@ -86,11 +86,6 @@ class FirstViewController : UIViewController, UITableViewDelegate, UITableViewDa
             secondVC.selectedDoctor = aInput
              self.present(secondVC, animated: true, completion: nil)
         }
-
-       
-
-            
-
     }
     
     

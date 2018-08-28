@@ -85,25 +85,27 @@ class Appointment {
     let idAppointment: Int
     let date: Date
     let idDoctor: Doctor
-    var idCustomer: Customer
+    var bookedByCustomerID: Customer?
     var availableForBooking: Bool
     
-    
-    init(idAppointment: Int, date: Date, idDoctor: Doctor, idCustomer: Customer) {
+    init(idAppointment: Int, date: Date, idDoctor: Doctor) {
         
         self.idAppointment = idAppointment
         self.date = date
         self.idDoctor = idDoctor
-        self.idCustomer = idCustomer
         self.availableForBooking = true
         
     }
     
+    func changeBookingStatus(selectedAppointment: Appointment) -> Appointment {
+        
+        if selectedAppointment.availableForBooking == true
+        { selectedAppointment.availableForBooking = false }
+        else { selectedAppointment.availableForBooking = true }
+        
+        return selectedAppointment
+        }
     
-//    func changeBookingStatus() -> Appointment {
-//        <#function body#>
-//    }
-//    
     
 }
 

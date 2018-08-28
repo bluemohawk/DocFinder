@@ -66,7 +66,7 @@ class DoctorDetailCard: UIViewController {
     
     @IBAction func closeThisViewController(_ sender: Any?) {
 
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
     }
     
@@ -92,7 +92,22 @@ class DoctorDetailCard: UIViewController {
 
         }
     }
+    
+    
+    @IBAction func makeAppointment(_ sender: Any) {
+        
+        // transitionning to new VC without segue
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        if let secondVC = sb.instantiateViewController(withIdentifier: "DoctorAppointmentCard") as? AppointmentViewController {
+//            let aInput = listingOfDoctors[indexPath.row]
+//            secondVC.selectedDoctor = aInput
+            self.present(secondVC, animated: true, completion: nil)
+        }
 
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 
