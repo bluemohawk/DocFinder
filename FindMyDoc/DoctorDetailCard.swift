@@ -39,10 +39,10 @@ class DoctorDetailCard: UIViewController {
             locationDoctor?.text = "\(selectedDoctor.specialty), \(selectedDoctor.city)"
             if selectedDoctor.gender == "M" {
                 pictureDoctor.image = arrayImagesM.randomElement()
-                backgroundPicture.backgroundColor = UIColor(named: "Nice Blue")
+                backgroundPicture.backgroundColor = #colorLiteral(red: 0.1154340729, green: 0.2346189618, blue: 0.437733233, alpha: 1)
             } else {
                 pictureDoctor.image = arrayImagesF.randomElement()
-                backgroundPicture.backgroundColor = UIColor(named: "Nice Purple")
+                backgroundPicture.backgroundColor = #colorLiteral(red: 0.1154340729, green: 0.2346189618, blue: 0.437733233, alpha: 1)
             }
             let doctorLocation = CLLocationCoordinate2D(latitude: selectedDoctor.coordinates.latitude, longitude: selectedDoctor.coordinates.longitude)
             
