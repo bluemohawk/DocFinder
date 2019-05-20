@@ -48,7 +48,6 @@ class Customer {
     let coordinates: Int
     var booking: [Appointment]?
     
-    
     init(idCustomer: Int, firstName: String, lastName: String, specialty: String, condition: String, coordinates: Int) {
         
         self.idCustomer = idCustomer
@@ -56,8 +55,6 @@ class Customer {
         self.lastName = lastName
         self.condition = condition
         self.coordinates = coordinates
-
-        
     }
     
 //    func searchForPhysicians() -> [Doctor] {
@@ -105,7 +102,11 @@ class Appointment {
         
         return selectedAppointment
         }
-    
-    
 }
 
+struct Colors {
+    let theme: String
+    let dominantColor: String
+    let fontColor: String
+    let accentColor: String
+}

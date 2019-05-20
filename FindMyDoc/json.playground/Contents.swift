@@ -2,7 +2,7 @@ import UIKit
 
 func someDocumentJSONBasedFunction() {
     
-    guard let url = Bundle.main.url(forResource: "HCPS Paris", withExtension: "json") else {
+    guard let url = Bundle.main.url(forResource: "HCPS", withExtension: "json") else {
         return }
     
     do {

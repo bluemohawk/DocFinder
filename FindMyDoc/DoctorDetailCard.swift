@@ -11,7 +11,7 @@ import MapKit
 
 class DoctorDetailCard: UIViewController {
     
-    var selectedDoctor: Doctor?
+    var selectedDoctor: Doctor!
     @IBOutlet weak var backgroundPicture: UIView!
     @IBOutlet weak var nameDoctor: UILabel!
     @IBOutlet weak var locationDoctor: UILabel!
@@ -30,7 +30,7 @@ class DoctorDetailCard: UIViewController {
         map.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         map.layer.borderWidth = 1.0
         
-        
+        //TEMP: convenient function for data demonstration ....
         let arrayImagesF = [#imageLiteral(resourceName: "doc3"), #imageLiteral(resourceName: "doc2"), #imageLiteral(resourceName: "doc4"), #imageLiteral(resourceName: "doc5")]
         let arrayImagesM = [ #imageLiteral(resourceName: "doc1")]
         
@@ -72,7 +72,6 @@ class DoctorDetailCard: UIViewController {
     
     @IBAction func callNumber(_ sender: UIButton!)  {
         
-        
         if let sender = sender.titleLabel?.text {
             
             let alertController = UIAlertController(title: "Prendre rendez-vous avec Dr \(String(describing: selectedDoctor!.lastName))?", message: "", preferredStyle: .alert)
@@ -99,9 +98,18 @@ class DoctorDetailCard: UIViewController {
         // transitionning to new VC without segue
         let sb = UIStoryboard(name: "Main", bundle: nil)
         if let secondVC = sb.instantiateViewController(withIdentifier: "DoctorAppointmentCard") as? AppointmentViewController {
-//            let aInput = listingOfDoctors[indexPath.row]
-//            secondVC.selectedDoctor = aInput
-            self.present(secondVC, animated: true, completion: nil)
+            let aInput = "\(selectedDoctor.firstName) \(selectedDoctor.lastName)"
+            secondVC.nameOfDr = aInput
+            
+            let transition = CATransition()
+            transition.duration = 0.25
+            transition.type = CATransitionType.push
+            transition.subtype = CATransitionSubtype.fromRight
+            self.view.window!.layer.add(transition, forKey: kCATransition)
+
+
+            
+            self.present(secondVC, animated: false, completion: nil)
         }
 
         

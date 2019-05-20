@@ -12,6 +12,7 @@
 		E03BF8C72126198200074F9A /* DoctorDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03BF8C62126198200074F9A /* DoctorDetailCard.swift */; };
 		E0526EAF212A0C4500853471 /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0526EAE212A0C4500853471 /* CustomCell2.swift */; };
 		E0526EB3212B083B00853471 /* HCPS Paris.json in Resources */ = {isa = PBXBuildFile; fileRef = E0526EB2212B083B00853471 /* HCPS Paris.json */; };
+		E0694FB121425BDB009FDC57 /* Developer notes in Resources */ = {isa = PBXBuildFile; fileRef = E0694FB021425BDB009FDC57 /* Developer notes */; };
 		E06BC08321317B5700E984A6 /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06BC08221317B5700E984A6 /* AppointmentViewController.swift */; };
 		E0947D9921234E00002077D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0947D9821234E00002077D1 /* AppDelegate.swift */; };
 		E0947D9B21234E00002077D1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0947D9A21234E00002077D1 /* FirstViewController.swift */; };
@@ -30,6 +31,7 @@
 		E03BF8C62126198200074F9A /* DoctorDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailCard.swift; sourceTree = "<group>"; };
 		E0526EAE212A0C4500853471 /* CustomCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell2.swift; sourceTree = "<group>"; };
 		E0526EB2212B083B00853471 /* HCPS Paris.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "HCPS Paris.json"; sourceTree = "<group>"; };
+		E0694FB021425BDB009FDC57 /* Developer notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Developer notes"; sourceTree = "<group>"; };
 		E06BC08221317B5700E984A6 /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
 		E0947D9521234E00002077D1 /* FindMyDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0947D9821234E00002077D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				E0FEA3002134710A006275F5 /* Date.playground */,
 				E0947D9821234E00002077D1 /* AppDelegate.swift */,
+				E0694FB021425BDB009FDC57 /* Developer notes */,
 				E0947D9A21234E00002077D1 /* FirstViewController.swift */,
 				E0EA2772212709B900BA87FD /* json.playground */,
 				E03BF8C62126198200074F9A /* DoctorDetailCard.swift */,
@@ -161,6 +164,7 @@
 			files = (
 				E0526EB3212B083B00853471 /* HCPS Paris.json in Resources */,
 				E0947DA521234E03002077D1 /* LaunchScreen.storyboard in Resources */,
+				E0694FB121425BDB009FDC57 /* Developer notes in Resources */,
 				E0947DA221234E03002077D1 /* Assets.xcassets in Resources */,
 				E0947DA021234E00002077D1 /* Main.storyboard in Resources */,
 				E028585D2127121C002B55CF /* HCPS USA.json in Resources */,

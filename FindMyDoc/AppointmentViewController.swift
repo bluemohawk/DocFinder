@@ -7,25 +7,38 @@
 //
 
 import UIKit
+import EventKit
 
 class AppointmentViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     var data = [Date]()
     var aDict = [[Date]]()
+    var nameOfDr = ""
+    let store = EKEventStore()
+    
     @IBOutlet weak var DrCanSeeYou: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         aDict = setDoctorAvailability()
         // Do any additional setup after loading the view.
+        DrCanSeeYou.text = "Dr \(nameOfDr) peut vous recevoir aux dates suivantes:"
+
+
 
         
     }
     
     @IBAction func returningtoDocDetail(_ sender: Any) {
         
-        dismiss(animated: true, completion: nil)
+        let transition = CATransition()
+        transition.duration = 0.25
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+        
+        dismiss(animated: false, completion: nil)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -54,7 +67,7 @@ class AppointmentViewController: UIViewController, UICollectionViewDelegate, UIC
         let WOY = aCal.component(.weekOfYear, from: aDate!)
         
         var week = ""
-        if WOY - currentWOY == 0 { week = "Cette semaine" }
+        if WOY - currentWOY == 0 { week = "Cette semaine:" }
         else if WOY - currentWOY == 1 { week = "La semaine prochaine:" }
         else if WOY - currentWOY > 1 { week = "Dans \(WOY - currentWOY) semaines:" }
 
@@ -86,6 +99,43 @@ class AppointmentViewController: UIViewController, UICollectionViewDelegate, UIC
         return cell
     }
     
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        // MARK: - TODO: Change the Calendar event as well as update info.plist
+        
+        store.requestAccess(to: .event, completion: {
+            (success, error) -> Void in
+            print("Got permission = \(success); error = \(String(describing: error))")
+        })
+        
+//        let calendarForEvent = store.defaultCalendarForNewEvents
+        
+        let anApt = aDict[indexPath.section][indexPath.item]
+        
+        let newEvent = EKEvent(eventStore: store)
+        newEvent.calendar = store.defaultCalendarForNewEvents
+        newEvent.startDate = anApt
+        newEvent.endDate = anApt.addingTimeInterval(45 * 60)
+        newEvent.title = "Dr \(nameOfDr)"
+        newEvent.notes = "sj cglnfgjncsgf vsognsphg vscfnpht vbgsconcfbot bsvcnfdishomxfhjsng  ghismcuhrwu huuhpmcajtj psmcjsmjgp"
+        
+        let location = CLLocation(latitude: 48.8491126, longitude: 2.382706)
+        let structuredLocation = EKStructuredLocation(title: "47-83, boulevard de l'Hôpital")  // same title with ekEvent.location
+        structuredLocation.geoLocation = location
+        newEvent.structuredLocation = structuredLocation
+        
+        
+        do {
+            try store.save(newEvent, span: .thisEvent)
+            
+        } catch {
+            print("error")
+            
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -96,9 +146,9 @@ class AppointmentViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     */
     
+    // MARK: - convenient function for data demonstration ....
     func setDoctorAvailability() -> [[Date]] {
         
-
         //get the current week of the Year
         let dateString = Date()
         var appointments = [Date]()

@@ -19,11 +19,7 @@ class CustomCell2: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-//        identityLabel.backgroundColor = #colorLiteral(red: 0.1154340729, green: 0.2346189618, blue: 0.437733233, alpha: 1)
-        
-//        infoLabel.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
-        
+              
         availability.layer.cornerRadius = 10
         availability.layer.masksToBounds = true
         availability.titleLabel?.adjustsFontSizeToFitWidth = true

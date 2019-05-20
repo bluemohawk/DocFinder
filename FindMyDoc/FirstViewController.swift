@@ -20,7 +20,7 @@ class FirstViewController : UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //TODO: Initial table setup from JSON - need an API connection
+        // TODO : Initial table setup from JSON - need an API connection
         setDoctorsTable()
         
 //        self.view = UITableView(frame: CGRect(), style: .plain)
@@ -35,6 +35,13 @@ class FirstViewController : UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: index, animated: true)
+        }
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listingOfDoctors.count
@@ -43,7 +50,7 @@ class FirstViewController : UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell2", for: indexPath) as! CustomCell2
-        
+//        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         let aInput = listingOfDoctors[indexPath.row]
         
         cell.identityLabel?.text = "Dr \(aInput.firstName) \(aInput.lastName)"
@@ -56,16 +63,16 @@ class FirstViewController : UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.availability?.setTitle("\(aInput.practiceStatus ?? "NA")", for: .normal)
 
-        if aInput.practiceStatus == "2 rendez-vous disponibles" {
+        if aInput.practiceStatus == "Prendre rendez-vous immediatement" {
             
-            cell.availability.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            cell.availability.backgroundColor = .clear//#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             cell.availability.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
             cell.availability.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             cell.availability.layer.borderWidth = 0.0
 
             
         } else {
-            cell.availability.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            cell.availability.backgroundColor = .clear // #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             cell.availability.setTitleColor(#colorLiteral(red: 0.1411764706, green: 0.1647058824, blue: 0.368627451, alpha: 1), for: .normal)
             cell.availability.layer.borderColor = #colorLiteral(red: 0.1411764706, green: 0.1647058824, blue: 0.368627451, alpha: 1)
             cell.availability.layer.borderWidth = 1.0
@@ -100,7 +107,7 @@ class FirstViewController : UIViewController, UITableViewDelegate, UITableViewDa
     //    }
     
     
-    //TEMP: convenient function
+    //TEMP: convenient function for data demonstration ....
     func setDoctorsTable() {
         
         var anArray = [Doctor]()
