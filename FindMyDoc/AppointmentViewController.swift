@@ -14,7 +14,7 @@ class AppointmentViewController: UIViewController, UICollectionViewDelegate, UIC
     
     var data = [Date]()
     var aDict = [[Date]]()
-    var nameOfDr = ""
+    var selectedDoctor: Doctor?
     let store = EKEventStore()
     
     @IBOutlet weak var DrCanSeeYou: UILabel!
@@ -23,11 +23,8 @@ class AppointmentViewController: UIViewController, UICollectionViewDelegate, UIC
         super.viewDidLoad()
         aDict = setDoctorAvailability()
         // Do any additional setup after loading the view.
-        DrCanSeeYou.text = "Dr \(nameOfDr) peut vous recevoir aux dates suivantes:"
+        DrCanSeeYou.text = "Dr \(selectedDoctor?.lastName ?? "John") peut vous recevoir aux dates suivantes:"
 
-
-
-        
     }
     
     @IBAction func returningtoDocDetail(_ sender: Any) {
@@ -70,7 +67,6 @@ class AppointmentViewController: UIViewController, UICollectionViewDelegate, UIC
         if WOY - currentWOY == 0 { week = "Cette semaine:" }
         else if WOY - currentWOY == 1 { week = "La semaine prochaine:" }
         else if WOY - currentWOY > 1 { week = "Dans \(WOY - currentWOY) semaines:" }
-
 
         label.text = week
         return header
@@ -117,14 +113,13 @@ class AppointmentViewController: UIViewController, UICollectionViewDelegate, UIC
         newEvent.calendar = store.defaultCalendarForNewEvents
         newEvent.startDate = anApt
         newEvent.endDate = anApt.addingTimeInterval(45 * 60)
-        newEvent.title = "Dr \(nameOfDr)"
-        newEvent.notes = "sj cglnfgjncsgf vsognsphg vscfnpht vbgsconcfbot bsvcnfdishomxfhjsng  ghismcuhrwu huuhpmcajtj psmcjsmjgp"
+        newEvent.title = "Dr \(selectedDoctor?.lastName ?? "John")"
+        newEvent.notes = "Dr \(selectedDoctor?.lastName ?? "John") vous recevera ce jour à son cabinet médical."
         
-        let location = CLLocation(latitude: 48.8491126, longitude: 2.382706)
-        let structuredLocation = EKStructuredLocation(title: "47-83, boulevard de l'Hôpital")  // same title with ekEvent.location
+        let location = CLLocation(latitude: selectedDoctor?.coordinates.latitude ?? 48.8491126, longitude: selectedDoctor?.coordinates.longitude ?? 2.382706)
+        let structuredLocation = EKStructuredLocation(title: selectedDoctor?.address ?? "heaven street")  // same title with ekEvent.location
         structuredLocation.geoLocation = location
         newEvent.structuredLocation = structuredLocation
-        
         
         do {
             try store.save(newEvent, span: .thisEvent)
@@ -167,7 +162,7 @@ class AppointmentViewController: UIViewController, UICollectionViewDelegate, UIC
                 component.weekday = day
                 component.hour = hour
                 component.minute = min
-                component.year = 2018
+                component.year = 2019
                 component.timeZone = TimeZone(abbreviation: "GMT")
                 
                 let calendar = Calendar.current

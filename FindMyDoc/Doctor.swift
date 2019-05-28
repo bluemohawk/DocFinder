@@ -15,6 +15,7 @@ public class Doctor {
     public let firstName: String
     public let lastName: String
     public let gender: String
+    public let address: String
     public let city: String
     public let imageFileName: String
     public let specialty: String
@@ -23,7 +24,7 @@ public class Doctor {
     var appointment: [Appointment]?
     
     
-    public init(idDoctor: String, firstName: String, lastName: String, gender: String, imageFileName: String, specialty: String, city: String, coordinates: (latitude: Double, longitude: Double)) {
+    public init(idDoctor: String, firstName: String, lastName: String, gender: String, imageFileName: String, specialty: String, address: String, city: String, coordinates: (latitude: Double, longitude: Double)) {
         
         self.idDoc = idDoctor
         self.firstName = firstName
@@ -31,6 +32,7 @@ public class Doctor {
         self.gender = gender
         self.imageFileName = imageFileName
         self.specialty = specialty
+        self.address = address
         self.city = city
         self.coordinates = coordinates
         

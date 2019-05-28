@@ -98,8 +98,8 @@ class DoctorDetailCard: UIViewController {
         // transitionning to new VC without segue
         let sb = UIStoryboard(name: "Main", bundle: nil)
         if let secondVC = sb.instantiateViewController(withIdentifier: "DoctorAppointmentCard") as? AppointmentViewController {
-            let aInput = "\(selectedDoctor.firstName) \(selectedDoctor.lastName)"
-            secondVC.nameOfDr = aInput
+            //let aInput = selectedDoctor//"\(selectedDoctor.firstName) \(selectedDoctor.lastName)"
+            secondVC.selectedDoctor = selectedDoctor
             
             let transition = CATransition()
             transition.duration = 0.25
@@ -107,8 +107,6 @@ class DoctorDetailCard: UIViewController {
             transition.subtype = CATransitionSubtype.fromRight
             self.view.window!.layer.add(transition, forKey: kCATransition)
 
-
-            
             self.present(secondVC, animated: false, completion: nil)
         }
 

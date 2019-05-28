@@ -127,6 +127,7 @@ class FirstViewController : UIViewController, UITableViewDelegate, UITableViewDa
                 guard let firstName = aDoc["First Name"] as? String else {return}
                 guard let lastName = aDoc["Last Name"] as? String else {return}
                 guard let gender = aDoc["Gender"] as? String else {return}
+                guard let address = aDoc["Street"] as? String else {return}
                 guard let city = aDoc["City"] as? String else {return}
                 guard let latitude = aDoc["latitude"] as? Double else { return }
                 guard let longitude = aDoc["longitude"] as? Double else { return }
@@ -135,7 +136,7 @@ class FirstViewController : UIViewController, UITableViewDelegate, UITableViewDa
                 let imageFileName = "test"
 //                if gender == "M" { imageFileName = ""} else { imageFileName = ""}
                 
-                let Doc = Doctor(idDoctor: id, firstName: firstName, lastName: lastName, gender: gender, imageFileName: imageFileName, specialty: "Neurologue",city: city, coordinates: (latitude: latitude, longitude: longitude))
+                let Doc = Doctor(idDoctor: id, firstName: firstName, lastName: lastName, gender: gender, imageFileName: imageFileName, specialty: "Neurologue", address: address, city: city, coordinates: (latitude: latitude, longitude: longitude))
                 
                 
                 let array = ["Voir nos\nhoraires", "Prendre\nRDV", "2 rendez-vous disponibles"]
